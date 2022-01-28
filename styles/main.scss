@@ -18,6 +18,8 @@ $card-border-radius: 1em;
 main {
     background-color: $light-gray;
     display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
     position: relative;
     padding: 3em 0;
@@ -28,7 +30,6 @@ main {
         transition-timing-function: ease-in-out;
         background-color: $white;
         border-radius: 1em;
-        margin: auto;
         display: inline-flex;
         flex-direction: column;
         justify-content: center;
