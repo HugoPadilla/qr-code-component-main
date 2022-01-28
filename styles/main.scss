@@ -1,0 +1,110 @@
+$white:hsl(0, 0%, 100%);
+$light-gray: hsl(212, 45%, 89%);
+$grayish-blue: hsl(220, 15%, 55%);
+$dark-blue: hsl(218, 44%, 22%);
+$light-blue: #0d4cac;
+$font-size-paragraph: 15px;
+$font-family:'Outfit',
+sans-serif;
+$card-border-radius: 1em;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $font-family;
+}
+
+main {
+    background-color: $light-gray;
+    display: flex;
+    widows: 100%;
+    min-height: 100vh;
+    position: relative;
+    padding: 3em 0;
+
+    .card {
+        transition-property: transform;
+        transition-duration: .3s;
+        transition-timing-function: ease-in-out;
+        background-color: $white;
+        border-radius: 1em;
+        margin: auto;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: $card-border-radius;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        position: relative;
+
+        .imagen {
+            border-radius: .8em;
+            width: 17.5em;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .title {
+            color: $dark-blue;
+            text-align: center;
+            font-size: 1.35rem;
+            width: 12em;
+            padding-top: 1em;
+            padding-bottom: .5em;
+        }
+
+        .desc {
+            text-align: center;
+            font-size: $font-size-paragraph;
+            letter-spacing: .01em;
+            color: $grayish-blue;
+            padding-bottom: 1.5em;
+            width: 18em;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            border-radius: $card-border-radius;
+            opacity: 0;
+            box-shadow: $grayish-blue 0px 25px 20px -20px;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        &:hover {
+            transform: scale(1.05, 1.05);
+        }
+
+        &:hover::after {
+            opacity: 1;
+        }
+
+
+    }
+
+}
+
+.attribution {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 1.52rem;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    font-size: 1.1em;
+    text-decoration: none;
+    font-weight: bold;
+    color: $dark-blue;
+
+    &:hover {
+        color: $light-blue;
+    }
+}
